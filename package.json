@@ -8,12 +8,12 @@
     "start-dev": "nodemon --inspect ./bin/www"
   },
   "engines": {
-    "node": ">=8.11.3"
+    "node": ">=8.11.3",
+    "npm": ">=5.6.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "*",
-    "quixote": "*"
+    "mocha": "*"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -31,9 +31,5 @@
     "node-fetch": "^2.1.2",
     "pug": "2.0.0-beta11",
     "serve-favicon": "~2.4.5"
-  },
-  "engines": {
-    "node": ">=8.11.3",
-    "npm": ">=5.6.0"
   }
 }

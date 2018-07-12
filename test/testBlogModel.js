@@ -1,17 +1,17 @@
 var assert = require('chai');
 var blogModel = require('../models/blogModel');
-describe('blogModel', function() {
+describe('blogModel', function () {
     var blog = new blogModel();
-    it("should be invalid if title is missing", function () {   
-       blog.validate(function (err) {
-           assert.expect(err.errors.title).to.exist;
-       })
+    it("should be invalid if title is missing", function () {
+        blog.validate(function (err) {
+            assert.expect(err.errors.title).to.exist;
+        })
     })
     it("should be invalid if author is missing", function () {
         blog.validate(function (err) {
             assert.expect(err.errors.author).to.exist;
         })
-     })
+    })
     it("should be invalid if description is missing", function () {
         blog.validate(function (err) {
             assert.expect(err.errors.description).to.exist;
@@ -28,6 +28,16 @@ describe('blogModel', function() {
     it("should be valid even if update date is not included", function () {
         blog.validate(function (err) {
             assert.should(err.errors.update_dt).not.exist();
+        });
+    })
+    it("should be valid even if pulished is not included", function () {
+        blog.validate(function (err) {
+            assert.should(err.errors.published).not.exist();
+        });
+    })
+    it("should be valid even if published date is not included", function () {
+        blog.validate(function (err) {
+            assert.should(err.errors.publish_dt).not.exist();
         });
     })
 });
